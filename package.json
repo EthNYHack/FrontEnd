@@ -29,13 +29,16 @@
     "@angular/platform-browser-dynamic": "~14.0.3",
     "@angular/router": "~14.0.3",
     "@walletconnect/web3-provider": "^1.7.8",
+    "apollo-angular": "^3.0.1",
     "rxjs": "~7.5.5",
     "tslib": "^2.4.0",
     "url": "^0.11.0",
     "util": "^0.12.4",
     "web3": "^1.7.4",
     "web3modal": "^1.9.8",
-    "zone.js": "~0.11.6"
+    "zone.js": "~0.11.6",
+    "@apollo/client": "^3.0.0",
+    "graphql": "^16"
   },
   "devDependencies": {
     "@angular/cli": "^14.0.3",

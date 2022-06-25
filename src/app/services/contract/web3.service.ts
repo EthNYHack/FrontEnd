@@ -82,9 +82,7 @@ export class Web3Service {
   }
 
   async accountInfo(account: any[]){
-    return ApolloModule.query({
-      
-    })
+
     console.log(account);
 
 

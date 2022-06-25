@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GraphQLModule } from '../../graphql.module'
+import { gql } from '@apollo/client'
 
 @Component({
   selector: 'app-account',
@@ -11,7 +13,6 @@ export class AccountComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.user);
   }
 
 }
