@@ -1,13 +1,24 @@
-<div class="flex flex-col justify-center items-center h-screen">
-  <div class="mt-1 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight text-center">
-    Get into web3
-  </div>
-  <H2> {{ data }}</H2>
+<div>
+  <div *ngIf="data == null">
+    <div class="flex flex-col justify-center items-center h-screen">
 
-  <div class="flex flex-col p-3">
-    <button class="bg-orange-500 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" (click)="Connect()" >
-      Connect your wallet
-    </button>
+      <div class="mt-1 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight text-center">
+        Get into web3
+      </div>
+
+      <div *ngIf="data !== null"> </div>
+      <H2> {{ data }}</H2>
+
+      <div class="flex flex-col p-3">
+        <button class="bg-orange-500 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" (click)="Connect()" *ngIf="data == null ">
+          Connect your wallet
+        </button>
+      </div>
+    </div>
   </div>
+<div *ngIf="data !== null">
+  <app-account [user]="data"></app-account>
+</div>
 
 </div>
+
