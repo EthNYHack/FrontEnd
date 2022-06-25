@@ -7,6 +7,11 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import { provider } from 'web3-core';
 
 
+//
+import { gql } from '@apollo/client/core';
+import { GraphQLModule } from '../../graphql.module';
+import { ApolloModule } from 'apollo-angular';
+
 
 @Injectable({
   providedIn: 'root'
@@ -77,9 +82,15 @@ export class Web3Service {
   }
 
   async accountInfo(account: any[]){
-    const initialvalue = await this.web3js.eth.getBalance(account);
-    this.balance = this.web3js.utils.fromWei(initialvalue , 'ether');
-    return this.balance;
+    return ApolloModule.query({
+      
+    })
+    console.log(account);
+
+
+
+
+
   }
 
 }
