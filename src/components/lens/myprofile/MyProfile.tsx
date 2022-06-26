@@ -1,10 +1,12 @@
 import React from "react";
-import { Avatar } from "@/components/elements/Avatar";
 import { ethers } from "ethers";
 
-
-
 const provider = new ethers.providers.JsonRpcProvider('https://mainnet.infura.io/v3/e4fa10cddeaf401698a3ae52121cdd79');
+const user = 'crisgarner.eth'
+const resolver = await provider.getResolver(
+  user);
+ const nft = 'https://bafybeicvyvlcrvj7zlo4tbqek2s7jfssllba52vtuc4lxzdvjvbwm27yo4.ipfs.infura-ipfs.io/'
+ const bg = 'https://ipfs.infura.io/ipfs/QmTuqB8RgqGi3qgWA6Xr3yRx88pUcqX56fB4TCJfgZ78YQ'
 
 export const MyProfile = () => {
 
