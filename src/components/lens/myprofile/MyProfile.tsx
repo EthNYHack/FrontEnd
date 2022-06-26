@@ -10,6 +10,7 @@ const resolver = provider.getResolver(
 
  const poap = fetch('https://api.poap.tech/metadata/20312/1').then(response => response.json()).then((jsonData) => {}).catch((error) => {
    // handle your errors here
+   console.log(poap);
    console.error(error)
  })
 
