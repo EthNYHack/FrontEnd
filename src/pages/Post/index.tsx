@@ -1,11 +1,9 @@
 import React from "react";
 import { useAccount } from "wagmi";
-
 import { useQuery } from "@apollo/client";
 import { GET_PROFILES } from "@/queries/profile/get-profiles";
 
 import { CreatePost } from "@/components/lens/post";
-import { CreateProfile } from "@/components/lens/profile";
 
 import { ENV_PROD, IS_PRODUCTION } from "@/constants";
 
@@ -27,7 +25,7 @@ export const PostPage = () => {
   if (!currentUser)
     return (
       <div>
-        <CreateProfile />
+        <h1>You need to create a profile first</h1>
       </div>
     );
 
