@@ -8,7 +8,7 @@ const resolver = provider.getResolver(
  const nft = 'https://bafybeicvyvlcrvj7zlo4tbqek2s7jfssllba52vtuc4lxzdvjvbwm27yo4.ipfs.infura-ipfs.io/'
  const bg = 'https://ipfs.infura.io/ipfs/QmTuqB8RgqGi3qgWA6Xr3yRx88pUcqX56fB4TCJfgZ78YQ'
 
- const poap = fetch().then(response => response.json()).then((jsonData) => {}).catch((error) => {
+ const poap = fetch('https://api.poap.tech/metadata/20312/1').then(response => response.json()).then((jsonData) => {}).catch((error) => {
    // handle your errors here
    console.error(error)
  })
