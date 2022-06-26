@@ -39,6 +39,7 @@ export const ProfilePage = () => {
         <div className="text-lg font-bold leading-none">{profile.name}</div>
         <div className="text-lg font-bold leading-none">{profile.handle}</div>
         <div className="text-secondary">{profile.bio}</div>
+        <DoesFollow profileId={profile.id} />
       </div>
       <div className="flex flex-col items-center lg:items-start mt-4 lg:mt-0 lg:ml-8">
         <div className="text-lg font-bold leading-none">{profile.ownedBy}</div>
@@ -53,7 +54,7 @@ export const ProfilePage = () => {
     </div>
   </div>
   <div className="flex flex-auto w-full max-w-5xl mx-auto p sm:p-8 pt-2">
-    <div className="hidden lg:flex flex-col items-start mr-8">
+    <div className="lg:flex flex-col items-start mr-8">
       <div className="flex flex-col max-w-80 w-full p-8  ">
         <div className="text-2xl font-semibold leading-tight">Certifications </div>
         <div className="mt-4">
@@ -92,8 +93,7 @@ export const ProfilePage = () => {
         </div>
 <br/>
         <div className="order-1 md:order-2 w-full md:w-40 md:ml-6 mb-8 md:mb-4 rounded-lg overflow-hidden">
-          <img src="assets/coverg.jpeg" alt="Card image"
-               className="w-full h-full object-cover"/></div>
+  </div>
       </div>
     </div>
   </div>
