@@ -24,52 +24,84 @@ export const ProfilePage = () => {
   if (error) return <div>Error!</div>;
 
   const profile = profileData.profiles.items[0];
+  console.log("profile", profile);
 
   if (!profile) return <div>No profile found for this handle</div>;
   return (
-    <div className="flex justify-center space-x-2 w-full mt-12 overflow-hidden">
-      <div className="min-w-sm border border-gray-700 bg-gray-700 text-gray-50 transition-shadow shadow-xl hover:shadow-xl min-w-max rounded-xl">
-        <div className="w-full">
-          <img
-            src="https://image.freepik.com/free-vector/abstract-binary-code-techno-background_1048-12836.jpg"
-            className="h-48 w-96 rounded-t-xl"
-          />
-        </div>
+    <div className="flex flex-col flex-auto min-w-0">
+  <div className="flex flex-col shadow bg-card ">
+    <div><img src="../../assets/cover.jpeg" alt="Cover image" className="h-40 lg:h-80 object-cover profile"/></div>
+    <div className="flex flex-col flex-0 lg:flex-row items-center max-w-5xl w-full mx-auto p-6 lg:h-18 bg-card">
+      <div className="-mt-20 lg:mt-22 rounded-full">
+      <Avatar profile={profile} />
+      </div>
+      <div className="flex flex-col items-center lg:items-start mt-4 lg:mt-0 lg:ml-8">
+        <div className="text-lg font-bold leading-none">{profile.name}</div>
+        <div className="text-lg font-bold leading-none">{profile.handle}</div>
+        <div className="text-secondary">{profile.bio}</div>
+      </div>
+      <div className="flex flex-col items-center lg:items-start mt-4 lg:mt-0 lg:ml-8">
+        <div className="text-lg font-bold leading-none">Loading ....</div>
+      </div>
 
-        <div className="flex items-center p-4">
-          <div className="relative flex flex-col items-center w-full">
-            <div className="h-24 w-24 md rounded-full relative items-end justify-end  min-w-max -top-16 flex bg-purple-200 text-purple-100 row-start-1 row-end-3 text-purple-650 ring-1 ring-white">
-              <Avatar profile={profile} />
-            </div>
-            <div className="flex flex-col space-y-1 justify-center items-center -mt-12 w-full">
-              <span className="text-md whitespace-nowrap text-gray-50 font-semibold">
-                {profile.name}
-              </span>
-              <span className="text-md whitespace-nowrap text-gray-100">
-                {profile.handle}
-              </span>
-              <p className="text-sm text-gray-200">{profile.bio}</p>
-              <div className="py-2 flex space-x-2">
-                <DoesFollow profileId={profile.id} />
-              </div>
-              <div className="py-4 flex justify-center items-center w-full divide-x divide-gray-400 divide-solid">
-                <span className="text-center px-2">
-                  <span className="text-gray-100">followers :</span>
-                  <span className="font-bold text-gray-50 px-2">
-                    {profile.stats.totalFollowers}
-                  </span>
-                </span>
-                <span className="text-center px-2">
-                  <span className="text-gray-100">following :</span>
-                  <span className="font-bold text-gray-50 px-2">
-                    {profile.stats.totalFollowing}
-                  </span>
-                </span>
-              </div>
-            </div>
+
+      <div className="hidden lg:flex h-8 mx-8 border-l-2"></div>
+      <div className="flex items-center mt-8 mb-4 lg:m-0 lg:ml-auto space-x-6">
+        <a className="font-medium" > Home </a>
+        <a className="text-secondary">Edit Profile</a>
+      </div>
+    </div>
+  </div>
+  <div className="flex flex-auto w-full max-w-5xl mx-auto p sm:p-8 pt-2">
+    <div className="hidden lg:flex flex-col items-start mr-8">
+      <div className="flex flex-col max-w-80 w-full p-8  ">
+        <div className="text-2xl font-semibold leading-tight  ">Your Participation</div>
+        <div className="mt-4">
+          We display the recent activity related to give feedback about regulations and rules Remember all the comments and feedback are stored in more than one public blockchain
+        </div>
+        <hr className="w-full border-t my-6"/>
+        <div className="flex flex-col my-3">
+          <div className="flex items-center">
+           
+            <span className="leading-none">
+
+            </span>
+          </div>
+          <div className="flex items-center mt-4">
+            
+            <span className="leading-none">
+
+            </span>
+          </div>
+          <div className="flex items-center mt-4">
+           
+            <span className="leading-none">
+
+            </span>
           </div>
         </div>
       </div>
+
+
     </div>
+    <div className="flex flex-col items-start">
+      <div 
+        className="flex flex-col md:flex-row justify-between max-w-80 md:max-w-160 w-full p-8 pb-4 ">
+        <div className="flex flex-col flex-auto order-2 md:order-1">
+          <div className="text-2xl font-semibold leading-tight"></div>
+        </div>
+<br/>
+        <div className="order-1 md:order-2 w-full md:w-40 md:ml-6 mb-8 md:mb-4 rounded-lg overflow-hidden">
+          <img src="assets/images/id.png" alt="Card cover image"
+               className="w-full h-full object-cover"/></div>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+
+
+</div>
+
   );
 };

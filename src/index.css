@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.profile {
+    width: 100%;
+    vertical-align: top; 
+    display: block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
