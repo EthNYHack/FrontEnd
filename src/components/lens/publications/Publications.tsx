@@ -40,25 +40,21 @@ export const Publications = () => {
   // console.log(data);
 
   return (
-    <div className="p-2">
-      <h1 className="text-xl font-bold text-center">20 Latest Publications</h1>
+    <div className="flex-auto p-6 sm:p-10">
+      <h1 className="text-xl font-bold text-center"></h1>
       {data && data.explorePublications.items && (
         <>
           {data.explorePublications.items.map(
             (item: PublicationType, index: number) => (
               <div
                 key={index}
-                className="flex bg-white shadow-lg rounded-lg mx-4 my-2 md:mx-auto border max-w-md md:max-w-2xl "
+                className="flex flex-col items-center max-w-80 w-full p-8 pb-6 card"
               >
-                <div className="flex items-start px-4 py-6 w-full">
-                  <div
-                    className="w-16 cursor-pointer"
-                    onClick={() => navigate(`/profile/${item.profile.handle}`)}
-                  >
-                    <Avatar profile={item.profile} size={"w-12 h-12"} />
-                  </div>
-
-                  <div className="w-full px-4">
+                <div className="flex flex-col items-center max-w-80 w-full p-8 pb-6">
+                <div className="p-6 -mt-20 lg:mt-22 rounded-full">
+      <Avatar profile={item.profile} />
+      </div>
+                  <div className="text-2xl font-semibold leading-tight text-center mt-8">
                     <div className="flex items-center justify-between">
                       <h2 className="text-lg font-semibold text-gray-900 -mt-1">
                         {item.profile.name}
@@ -90,23 +86,9 @@ export const Publications = () => {
                         </svg>
                         <span>{item.stats.totalAmountOfComments}</span>
                       </div>
-                      <div className="flex text-gray-700 text-sm mr-3">
-                        <svg
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          className="w-4 h-4 mr-1"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                          />
-                        </svg>
-                        <span>{item.stats.totalAmountOfCollects}</span>
-                      </div>
+                     
                     </div>
+                    <button onClick={() => navigate(`/profile/${item.profile.handle}`)} className='w-full border-2 p-1 rounded text-gray-700 uppercase font-semibold text-lg hover:bg-gray-200'children='See'/>
                   </div>
                 </div>
               </div>

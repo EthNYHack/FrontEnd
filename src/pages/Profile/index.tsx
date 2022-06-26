@@ -30,7 +30,7 @@ export const ProfilePage = () => {
   return (
     <div className="flex flex-col flex-auto min-w-0">
   <div className="flex flex-col shadow bg-card ">
-    <div><img src="../../assets/cover.jpeg" alt="Cover image" className="h-40 lg:h-80 object-cover profile"/></div>
+    <div><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Cover image" className="h-40 lg:h-80 object-cover profile"/></div>
     <div className="flex flex-col flex-0 lg:flex-row items-center max-w-5xl w-full mx-auto p-6 lg:h-18 bg-card">
       <div className="-mt-20 lg:mt-22 rounded-full">
       <Avatar profile={profile} />
@@ -41,23 +41,23 @@ export const ProfilePage = () => {
         <div className="text-secondary">{profile.bio}</div>
       </div>
       <div className="flex flex-col items-center lg:items-start mt-4 lg:mt-0 lg:ml-8">
-        <div className="text-lg font-bold leading-none">Loading ....</div>
+        <div className="text-lg font-bold leading-none">{profile.ownedBy}</div>
       </div>
 
 
       <div className="hidden lg:flex h-8 mx-8 border-l-2"></div>
       <div className="flex items-center mt-8 mb-4 lg:m-0 lg:ml-auto space-x-6">
         <a className="font-medium" > Home </a>
-        <a className="text-secondary">Edit Profile</a>
+        <a className="text-secondary">{profile.id}</a>
       </div>
     </div>
   </div>
   <div className="flex flex-auto w-full max-w-5xl mx-auto p sm:p-8 pt-2">
     <div className="hidden lg:flex flex-col items-start mr-8">
       <div className="flex flex-col max-w-80 w-full p-8  ">
-        <div className="text-2xl font-semibold leading-tight  ">Your Participation</div>
+        <div className="text-2xl font-semibold leading-tight">Certifications </div>
         <div className="mt-4">
-          We display the recent activity related to give feedback about regulations and rules Remember all the comments and feedback are stored in more than one public blockchain
+          We display the recent activity related to Certifications recognitions, level ups about carrer, verifications about course completation and more.
         </div>
         <hr className="w-full border-t my-6"/>
         <div className="flex flex-col my-3">
@@ -92,7 +92,7 @@ export const ProfilePage = () => {
         </div>
 <br/>
         <div className="order-1 md:order-2 w-full md:w-40 md:ml-6 mb-8 md:mb-4 rounded-lg overflow-hidden">
-          <img src="assets/images/id.png" alt="Card cover image"
+          <img src="assets/coverg.jpeg" alt="Card image"
                className="w-full h-full object-cover"/></div>
       </div>
     </div>

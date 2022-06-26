@@ -1,5 +1,5 @@
 // If ready for production, change boolean value to 'true'
-export const IS_PRODUCTION = false;
+export const IS_PRODUCTION = true;
 
 // Environments
 export const ENV_PROD = process.env.NODE_ENV === "production";

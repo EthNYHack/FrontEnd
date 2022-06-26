@@ -22,7 +22,6 @@ type decodedType = {
 };
 let decoded: decodedType;
 
-// const APIURL = "https://api-mumbai.lens.dev/";
 const httpLink = new HttpLink({ uri: LENS_API_URL });
 
 const authLink = new ApolloLink((operation, forward) => {

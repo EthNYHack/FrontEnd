@@ -7,6 +7,7 @@ import { LensLogin } from "@/components/lens";
 import { LandingPage, ProfilePage, PostPage } from "@/pages";
 
 import { ENV_PROD, ENV_DEV } from "@/constants";
+import { MyProfile } from "./components/lens/myprofile";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/profile/:handle" element={<ProfilePage />} />
         <Route path="/post" element={<PostPage />} />
+        <Route path="/myprofile" element={<MyProfile />} />
       </Route>
     </Routes>
   );
@@ -26,7 +28,7 @@ const AppLayout = () => {
   const navigate = useNavigate();
   return (
     <div className="h-screen flex flex-col">
-      <header className="flex justify-center p-4">
+      <header className="flex justify-center p-4 bg-stone-900">
         <LensLogin/>
         <ConnectButton />
       </header>
@@ -41,12 +43,7 @@ const AppLayout = () => {
           >
             home
           </button>
-          <button
-            onClick={() => navigate("/post")}
-            className="w-full border-2 p-1 rounded text-gray-700 uppercase font-semibold text-lg hover:bg-gray-200"
-          >
-            post
-          </button>
+        
           <button
             onClick={() => navigate("/myprofile")}
             className="w-full border-2 p-1 rounded text-gray-700 uppercase font-semibold text-lg hover:bg-gray-200"
@@ -54,16 +51,6 @@ const AppLayout = () => {
             My Profile
           </button>
         </div>
-        {ENV_PROD && (
-          <div className="border h-8 border-stone-900 bg-stone-800 pt-1 uppercase font-bold">
-            production
-          </div>
-        )}
-        {ENV_DEV && (
-          <div className="border h-8 border-purple-700 bg-purple-600 pt-1 uppercase font-bold">
-            development
-          </div>
-        )}
       </footer>
     </div>
   );
